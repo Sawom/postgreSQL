@@ -12,16 +12,13 @@ INSERT INTO person2 VALUES(6,'test2', 45, 'test@gmail.com')
 ALTER TABLE person2
 DROP COLUMN email;
 
+--  add constraint
+ALTER TABLE person3
+ADD CONSTRAINT unique_key_add UNIQUE(age); -- unique_key_add diye identify korlo and eta icchamoto dea zay
 
+-- drop constraint
+ALTER TABLE person3
+DROP CONSTRAINT unique_key_add; 
 
-
-
-
-
-
-
-
-
-
-
-
+-- table ache, but kono data thakbe na 
+TRUNCATE TABLE person2;
