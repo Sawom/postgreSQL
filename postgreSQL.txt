@@ -1,0 +1,19 @@
+--(create database)
+CREATE DATABASE ph 
+
+
+-- create table
+CREATE TABLE person (
+person_id SERIAL PRIMARY KEY,
+first_name VARCHAR(50),
+lastname VARCHAR(50),
+age INTEGER,
+is_active BOOLEAN,
+dob DATE 
+)
+
+--  rename table
+ALTER TABLE person RENAME TO "user";
+
+-- delete table 
+DROP TABLE "user"
