@@ -1,0 +1,27 @@
+-- data table manipulation
+
+-- add column
+ALTER TABLE person2
+ADD COLUMN email VARCHAR(30) DEFAULT 'default@gmail.com' NOT NULL;
+
+-- default dewar er pore zodi oi column e onno data dei to oi data nibe. r data na dile default tai thakbe
+INSERT INTO person2 VALUES(6,'test2', 45, 'test@gmail.com')
+
+
+-- drop column
+ALTER TABLE person2
+DROP COLUMN email;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
