@@ -1,7 +1,6 @@
 --(create database)
 CREATE DATABASE ph 
 
-
 -- create table
 CREATE TABLE person (
 person_id SERIAL PRIMARY KEY,
@@ -17,3 +16,28 @@ ALTER TABLE person RENAME TO "user";
 
 -- delete table 
 DROP TABLE "user"
+
+-- create table with constrants 
+CREATE TABLE person3(
+    id serial PRIMARY KEY ,
+    user_name VARCHAR(30) NOT NULL UNIQUE,
+    age INTEGER CHECK (age >= 18)
+)
+
+
+-- composite primary key. zokhn 2ta key milay   1ta hoy
+CREATE TABLE person4(
+    id serial,
+    user_name VARCHAR(30) NOT NULL,
+    age INTEGER CHECK (age >= 18),
+    PRIMARY KEY (id, user_name), -- composite primary key
+    UNIQUE(user_name,age) -- 2ta column o unique kore dea zay
+)
+
+
+-- insert data
+INSERT INTO person2(id, user_name, age) VALUES (3, 'sawom', 27)
+
+-- insert data multiple row
+INSERT INTO person2(id, user_name, age) 
+VALUES (4, 'Rodoshi', 25),(5, 'Fariha', 27)
