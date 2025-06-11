@@ -1,0 +1,102 @@
+-- create table
+CREATE TABLE students(
+    student_id serial PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    grade CHAR(2),
+    course VARCHAR(50),
+    email VARCHAR(100),
+    dob DATE,
+    blood_group VARCHAR(3),
+    country VARCHAR(50) 
+);
+
+--insert data
+INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blood_group, country) VALUES
+('Alice', 'Johnson', 20, 'A', 'Computer Science', 'alice.johnson@example.com', '2004-02-15', 'A+', 'USA'),
+('Bob', 'Smith', 22, 'B', 'Mechanical Engineering', 'bob.smith@example.com', '2002-06-30', 'O-', 'Canada'),
+('Charlie', 'Brown', 19, 'A', 'Physics', 'charlie.brown@example.com', '2005-01-10', 'B+', 'UK'),
+('Diana', 'Clark', 21, 'C', 'Mathematics', 'diana.clark@example.com', '2003-09-25', 'AB+', 'Australia'),
+('Ethan', 'Lee', 20, 'B', 'Electrical Engineering', 'ethan.lee@example.com', '2004-03-12', 'O+', 'Singapore'),
+('Fiona', 'Martinez', 23, 'A', 'Biology', 'fiona.martinez@example.com', '2001-11-03', 'A-', 'Mexico'),
+('George', 'Walker', 18, 'B', 'Chemistry', 'george.walker@example.com', '2006-07-20', 'B-', 'Ireland'),
+('Hannah', 'Scott', 22, 'A', 'Information Technology', 'hannah.scott@example.com', '2002-05-16', 'O+', 'Germany'),
+('Ian', 'Lopez', 21, 'C', 'Civil Engineering', 'ian.lopez@example.com', '2003-04-05', 'AB-', 'Spain'),
+('Jane', 'Wilson', 20, 'B', 'Economics', 'jane.wilson@example.com', '2004-08-22', 'A+', 'USA'),
+('Kyle', 'Anderson', 19, 'A', 'Software Engineering', 'kyle.anderson@example.com', '2005-10-11', 'B+', 'New Zealand'),
+('Laura', 'Thomas', 18, 'B', 'Philosophy', 'laura.thomas@example.com', '2006-12-09', 'O-', 'France'),
+('Mike', 'Taylor', 22, 'A', 'History', 'mike.taylor@example.com', '2002-02-14', 'A-', 'Brazil'),
+('Nina', 'Moore', 21, 'C', 'Art & Design', 'nina.moore@example.com', '2003-06-18', 'B-', 'Italy'),
+('Oscar', 'Martin', 20, 'B', 'Political Science', 'oscar.martin@example.com', '2004-01-27', 'O+', 'Portugal'),
+('Paula', 'Hall', 19, 'A', 'Environmental Science', 'paula.hall@example.com', '2005-03-21', 'AB+', 'Sweden'),
+('Quentin', 'Allen', 23, 'B', 'Statistics', 'quentin.allen@example.com', '2001-09-08', 'A+', 'India'),
+('Rachel', 'Young', 18, 'A', 'Law', 'rachel.young@example.com', '2006-10-30', 'O-', 'Norway'),
+('Sam', 'King', 21, 'C', 'Business Administration', 'sam.king@example.com', '2003-07-13', 'B+', 'USA'),
+('Tina', 'Wright', 20, 'A', 'Psychology', 'tina.wright@example.com', '2004-05-07', 'AB-', 'South Korea');
+
+-- showing multiple column
+SELECT email,age FROM students
+
+-- showing all column
+SELECT * FROM students
+
+-- sorting 
+SELECT * FROM students ORDER BY first_name ASC 
+-- asc means ascending
+
+SELECT * FROM students ORDER BY first_name DESC 
+-- desc means descending
+
+-- unique element koyta ache eta kore DISTINCT diye
+SELECT DISTINCT country FROM students
+
+-- showing data with conditions. 
+-- filtering data
+SELECT * FROM students
+WHERE country = 'USA'
+
+-- showing data with multiple conditions. multiple contidions added by 'AND'
+SELECT * FROM students
+WHERE grade = 'A' AND course = 'Economics'
+
+-- or conditions
+SELECT * FROM students
+WHERE country = 'USA' OR country = 'Australia'
+
+-- showing data with multiple and , or
+SELECT * FROM students
+WHERE (country = 'USA' OR country = 'Australia') AND age = 20
+
+-- greater than, equal, less than etc shb e same vabe
+SELECT * FROM students
+WHERE (country != 'USA' OR country = 'Australia') AND age >= 20
+
+-- 1ta column er data shob capital hobe
+SELECT upper( first_name) FROM students
+
+-- concat() 2ta column milay 1ta column kore output korlam
+SELECT concat( first_name, last_name) AS "fullName" FROM students
+
+-- **Scalar function**
+-- Scalar function holo proti row te operation calay ouput dibe row wise. example length()
+SELECT length( first_name ) FROM students 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
