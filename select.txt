@@ -122,3 +122,23 @@ WHERE first_name LIKE 'A'
 -- ilike => case insensitive
 SELECT * FROM students 
 WHERE first_name ILIKE 'a%'
+
+-- limit e ze number dibo oi koyta row ashbe
+SELECT * FROM students 
+LIMIT 5
+
+-- OFFSET 1st row theke oi koyta row bad diye baki gula dekhabe
+SELECT * FROM students 
+LIMIT 5 OFFSET 6
+
+--delete
+DELETE  FROM students 
+WHERE grade = 'B'
+
+DELETE FROM students
+WHERE grade = 'C' AND country = 'USA'
+
+--update
+UPDATE students 
+SET email = 'sawom@gmail.com' , age = 30
+WHERE student_id = 42
