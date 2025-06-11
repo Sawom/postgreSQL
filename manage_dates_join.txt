@@ -1,0 +1,33 @@
+SELECT now()
+
+SELECT CURRENT_DATE - INTERVAL '1 month'
+SELECT CURRENT_DATE - INTERVAL '1 year 2 month'
+
+-- birthday and ajker date porjonto boysh koto seta
+SELECT * ,age(CURRENT_DATE, dob) FROM students
+
+-- group BY
+SELECT country FROM students
+GROUP BY country
+
+-- having
+SELECT country, avg(age) FROM students
+GROUP BY country
+HAVING avg(age) > 20
+
+-- kon bochor e kotojon student ache 
+SELECT EXTRACT(YEAR FROM dob) AS birth_year, count(*)
+FROM students
+GROUP BY birth_year 
+
+
+
+
+
+
+
+
+
+
+
+
