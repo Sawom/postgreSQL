@@ -82,21 +82,14 @@ SELECT concat( first_name, last_name) AS "fullName" FROM students
 -- Scalar function holo proti row te operation calay ouput dibe row wise. example length()
 SELECT length( first_name ) FROM students 
 
+-- **Aggregate Functions**
+-- shob column or pra table calculate kore 1ta value return korbe
+SELECT avg( age ) FROM students
+SELECT max( age ) FROM students
+SELECT min( age ) FROM students
+SELECT sum( age ) FROM students
+SELECT count( * ) FROM students -- how mane rows
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Scalar function & Aggregate Functions combined koreo hoy
+SELECT max( length(first_name) ) FROM students
 
