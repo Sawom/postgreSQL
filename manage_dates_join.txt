@@ -40,3 +40,23 @@ JOIN "user" ON post.user_id = "user".id
 -- table rename kore 
 SELECT * FROM post AS p
 JOIN "user" AS u ON p.user_id = u.id
+
+-- left join
+SELECT * FROM post AS p
+LEFT JOIN "user" AS u ON p.user_id = u.id
+
+-- left join
+SELECT * FROM post AS p
+RIGHT JOIN "user" AS u ON p.user_id = u.id
+
+-- full join
+SELECT * FROM post AS p
+FULL  JOIN "user" AS u ON p.user_id = u.id
+
+-- natural join
+SELECT * FROM post
+NATURAL JOIN "user"
+
+-- cross join
+SELECT * FROM post
+CROSS JOIN "user"
