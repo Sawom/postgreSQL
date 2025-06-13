@@ -1,0 +1,51 @@
+-- create table
+CREATE TABLE employees(
+    employee_id  SERIAL PRIMARY KEY,
+    department_name VARCHAR(60),
+    employee_name VARCHAR(50),
+    salary DECIMAL (10,2),
+    hire_date DATE 
+)
+
+-- insert data
+INSERT INTO employees (department_name, employee_name, salary, hire_date) VALUES
+('HR', 'Alice Johnson', 55000.00, '2019-03-15'),
+('Finance', 'Bob Smith', 62000.00, '2020-07-22'),
+('IT', 'Charlie Brown', 48000.00, '2021-01-10'),
+('Marketing', 'Diana Prince', 71000.00, '2018-11-05'),
+('IT', 'Ethan Hunt', 53000.00, '2022-06-30'),
+('Sales', 'Fiona Gallagher', 67000.00, '2020-10-14'),
+('HR', 'George Martin', 46000.00, '2023-02-27'),
+('Finance', 'Hannah Lee', 75000.00, '2017-09-08'),
+('IT', 'Ian Wright', 52000.00, '2021-04-17'),
+('Sales', 'Julia Roberts', 58000.00, '2019-12-01'),
+('Marketing', 'Kevin Turner', 60000.00, '2020-05-19'),
+('HR', 'Laura Palmer', 49000.00, '2022-01-12'),
+('Finance', 'Michael Scott', 65000.00, '2018-04-30'),
+('IT', 'Nancy Drew', 56000.00, '2023-08-21'),
+('Sales', 'Oscar Isaac', 72000.00, '2017-11-02'),
+('Marketing', 'Pam Beesly', 51000.00, '2020-03-25'),
+('IT', 'Quentin Blake', 47000.00, '2021-09-14'),
+('HR', 'Rachel Green', 58000.00, '2019-06-07'),
+('Finance', 'Steve Rogers', 69000.00, '2018-12-20'),
+('IT', 'Tina Fey', 63000.00, '2022-07-29'),
+('Marketing', 'Uma Thurman', 54000.00, '2021-11-11'),
+('Sales', 'Victor Hugo', 60000.00, '2023-03-18'),
+('HR', 'Wanda Maximoff', 70000.00, '2019-05-27'),
+('Finance', 'Xander Cage', 49000.00, '2020-01-09'),
+('IT', 'Yara Shahidi', 53000.00, '2022-10-05'),
+('Sales', 'Zoe Kravitz', 62000.00, '2018-08-16'),
+('HR', 'Abby Wambach', 51000.00, '2021-12-23'),
+('Marketing', 'Bruce Wayne', 75000.00, '2017-06-01'),
+('Finance', 'Clark Kent', 67000.00, '2020-04-19'),
+('IT', 'Donna Paulsen', 69000.00, '2023-09-04');
+
+
+-- subqueries
+SELECT * FROM employees WHERE salary > (SELECT max(salary) FROM employees WHERE department_name = 'HR' )
+
+SELECT *, (SELECT sum(salary) FROM employees ) FROM employees 
+
+SELECT department_name, sum(salary)
+FROM employees 
+GROUP BY department_name
